@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Column using css</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+<style type="text/css">
+	html {
+		font-family: 'Roboto Mono', monospace;
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+	}
+	header {
+		display: inline-block;
+		width: 100%;
+		background: #1e5278;
+		color: #fff;
+	}
+	footer {
+		display: inline-block;
+		width: 100%;
+		background: #1e5278;
+		color: #fff;
+		margin-top: 15px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+	section {
+		display: inline-block;
+		width: 100%;
+	}
+
+	h1 {
+		text-align: center;
+		font-size: 24px;
+		font-weight: 700;
+		padding: 15px;
+		text-transform: uppercase;
+	}
+	h2 {
+		text-align: center;
+		font-size: 21px;
+		border-bottom: 1px solid #ccc;
+		padding: 15px;
+		text-transform: uppercase;
+	}
+ 	p {
+		max-width: 960px;
+	    margin: 0 auto;
+	    font-size: 18px;
+	    font-weight: 700;
+	    padding: 15px;
+ 	}
+	pre {
+	    background: #1e5278;
+	    display: block;
+	    max-width: 960px;
+	    margin: 0 auto;
+	    padding: 0 15px;
+	    color: #fff;
+	    font-weight: 700;
+	    text-align: left;
+	}
+	code {
+	    display: inherit;
+	    width: 100%;
+	    white-space: pre-line;
+	    padding: 0;
+	    margin: 0;
+	    text-align: left;
+	}
+</style>
+<header>
+	<h1>Creating columns using Css</h1>
+</header>
+<section>
+<h2>Column using display inline-block</h2>
+<div class="collumns_container">
+	<div class="col col2">collumn 1</div>
+	<div class="col col2">collumn 2</div>
+</div>
+
+<div class="code_wrapper">
+	<p>Html: </p>
+	<pre>
+		<code>
+			&lt;div class="collumns_container"&gt;
+				&lt;div class="col col2">collumn 1&lt;/div&gt;
+				&lt;div class="col col2"&gt;collumn 2&lt;/div&gt;
+			&lt;/div&gt;
+		</code>
+	</pre>
+	<p>Style: </p>
+	<pre>
+		<code>
+
+			.collumns_container {
+			    display: block;
+			    max-width: 1200px;
+			    white-space: nowrap;
+			    font-size: 0;
+			    padding: 15px;
+			    margin: 0 auto;
+				background: gray;
+			}
+
+			.collumns_container .col {
+				display: inline-block;
+				vertical-align: middle;
+			 	box-sizing: border-box;
+			 	white-space: normal;
+				border: 0;
+				margin: 0;
+				font-size: 14px;
+			}
+
+			.collumns_container .col.col2 {
+				width: 50%;
+			}
+		</code>
+	</pre>
+</div>
+
+<style type="text/css">
+	.collumns_container {
+	    display: block;
+	    max-width: 1200px;
+	    white-space: nowrap;
+	    font-size: 0;
+	    padding: 15px;
+	    margin: 0 auto;
+		background: gray;
+	}
+
+	.collumns_container .col {
+		display: inline-block;
+		vertical-align: middle;
+	 	box-sizing: border-box;
+	 	white-space: normal;
+		border: 0;
+		margin: 0;
+		font-size: 14px;
+	}
+
+	.collumns_container .col.col2 {
+		width: 50%;
+	}
+</style>
+
+
+<h2>Column using display flex</h2>
+<div class="collumns_container_flex">
+	<div class="col col2">collumn 1</div>
+	<div class="col col2">collumn 2</div>
+</div>
+
+<div class="code_wrapper">
+	<p>Html: </p>
+	<pre>
+		<code>
+			&lt;div class="collumns_container_flex"&gt;
+				&lt;div class="col col2">collumn 1&lt;/div&gt;
+				&lt;div class="col col2"&gt;collumn 2&lt;/div&gt;
+			&lt;/div&gt;
+		</code>
+	</pre>
+	<p>Style: </p>
+	<pre>
+		<code>
+			.collumns_container_flex {
+				    max-width: 1200px;
+				    margin: 0 auto;
+				    display: flex;
+				    flex-flow: row wrap;
+				    padding: 15px;
+					background: #d8d8d8;
+				}
+
+				.collumns_container_flex .col {
+					flex: 0 0 100%;
+
+				}
+
+				.collumns_container_flex .col.col2 {
+					flex: 0 0 50%;
+				}
+		</code>
+	</pre>
+</div>
+<style type="text/css">
+	.collumns_container_flex {
+	    max-width: 1200px;
+	    margin: 0 auto;
+	    display: flex;
+	    flex-flow: row wrap;
+	    padding: 15px;
+		background: #d8d8d8;
+	}
+
+	.collumns_container_flex .col {
+		flex: 0 0 100%;
+
+	}
+
+	.collumns_container_flex .col.col2 {
+		flex: 0 0 50%;
+	}
+</style>
+
+
+<h2>Column using display grid</h2>
+<div class="collumns_container_grid">
+	<div class="col col2">collumn 1</div>
+	<div class="col col2">collumn 2</div>
+</div>
+<div class="code_wrapper">
+	<p>Html: </p>
+	<pre>
+		<code>
+			&lt;div class="collumns_container_grid"&gt;
+				&lt;div class="col col2">collumn 1&lt;/div&gt;
+				&lt;div class="col col2"&gt;collumn 2&lt;/div&gt;
+			&lt;/div&gt;
+		</code>
+	</pre>
+	<p>Style: </p>
+	<pre>
+		<code>
+			.collumns_container_grid {
+			    max-width: 1200px;
+			    margin: 0 auto;
+			    display: grid;
+			    grid-template-columns: 50% 50%;
+			  	background-color: #2196F3;
+			  	padding: 15px;
+			}
+		</code>
+	</pre>
+</div>
+<style type="text/css">
+	.collumns_container_grid {
+	    max-width: 1200px;
+	    margin: 0 auto;
+	    display: grid;
+	    grid-template-columns: 50% 50%;
+	  	background-color: #2196F3;
+	  	padding: 15px;
+	}
+
+</style>
+</section>
+<footer>
+	<p>copyright &#9400; 2023</p>
+</footer>
+</body>
+</html>
